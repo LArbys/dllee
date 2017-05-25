@@ -1,22 +1,24 @@
 #!/bin/bash
 
-set -e
+if [ -z ${DLLEE_UNIFIED_BASEDIR+x} ]; then
+    export DLLEE_UNIFIED_BASEDIR=$PWD
+fi
 
 # setup environment variables
-source setup.sh
+source $DLLEE_UNIFIED_BASEDIR/setup.sh
 
 # setup larlite
-source larlite/config/setup.sh
+source $DLLEE_UNIFIED_BASEDIR/larlite/config/setup.sh
 
 # setup laropencv
-source LArOpenCV/setup_laropencv.sh
+source $DLLEE_UNIFIED_BASEDIR/LArOpenCV/setup_laropencv.sh
 
 # setup Geo2D
-source Geo2D/config/setup.sh
+source $DLLEE_UNIFIED_BASEDIR/Geo2D/config/setup.sh
 
 # setup LArCV
-source LArCV/configure.sh
+source $DLLEE_UNIFIED_BASEDIR/LArCV/configure.sh
 
 # setup larlitecv
-source larlitecv/configure.sh
+source $DLLEE_UNIFIED_BASEDIR/larlitecv/configure.sh
 
