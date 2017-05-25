@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 homedir=$PWD
 echo "Starting from $homedir"
 
