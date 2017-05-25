@@ -1,5 +1,8 @@
 #!/bin/bash
 
+source setup.sh
+source configure.sh
+
 homedir=$PWD
 
 cd $LARLITE_BASEDIR
