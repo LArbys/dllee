@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # setup environment variables
 source setup.sh
 
