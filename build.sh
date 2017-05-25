@@ -1,9 +1,15 @@
 #!/bin/bash
 
+homedir=$PWD
+echo "Starting from $homedir"
+echo "LARLITE: ${LARLITE_BASEDIR}"
+echo "LARLITE: ${GEO2D_BASEDIR}"
+echo "LARCV: ${LARCV_BASEDIR}"
+echo "LAROPENCV: ${LAROPENCV_BASEDIR}"
+echo "LARLITECV: ${LARLITECV_BASEDIR}"
+
 source setup.sh
 source configure.sh
-
-homedir=$PWD
 
 cd $LARLITE_BASEDIR
 make -j4 || return 1
