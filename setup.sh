@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # SPECIFY WHERE OPENCV IS
-export OPENCV_LIBDIR=/usr/local/lib
-export OPENCV_INCDIR=/usr/local/include
+export OPENCV_LIBDIR=/usr/local/opt/opencv3/lib
+export OPENCV_INCDIR=/usr/local/opt/opencv3/include
 
 suffix=so
 if [[ `uname` == 'Darwin' ]]; then
