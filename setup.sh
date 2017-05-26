@@ -1,12 +1,16 @@
 #!/bin/bash
 
 # SPECIFY WHERE OPENCV IS
-export OPENCV_LIBDIR=/usr/local/opt/opencv3/lib
-export OPENCV_INCDIR=/usr/local/opt/opencv3/include
+export OPENCV_LIBDIR=/usr/local/lib
+export OPENCV_INCDIR=/usr/local/include
 
 suffix=so
 if [[ `uname` == 'Darwin' ]]; then
     suffix=dylib
+    # setting opencv paths to use location used by homebrew.
+    # change this here, if you used another location
+    export OPENCV_LIBDIR=/usr/local/opt/opencv3/lib
+    export OPENCV_INCDIR=/usr/local/opt/opencv3/include    
 fi
 
 if [ ! -f $OPENCV_LIBDIR/libopencv_core.${suffix} ]; then
