@@ -11,9 +11,22 @@ Warning: I don't know what happens when one works on submodule code. Will things
 * ROOT (6 Highly recommended. 5 might work, but not really supported)
 * OpenCV
 
+## Pre-reqs
+
+### Ubuntu/Linux
+
+* One can use apt-get to install the dependencies for ROOT and OpenCV 3
+* ROOT and OpenCV 3 can be built by downloading the source and following instructions found online
+
+### OS X
+
+* One first needs to install X code on OS X
+* Our group is mostly familiar with home brew to serve as the OS X package manager
+* Use brew to install pre-reqs for ROOT and OpenCV 3 itself. Make sure to specify `brew install opencv3` and not just `opencv` which installs OpenCV 2. 
+
 ## ROOT
 
-To build ROOT follow these [instuctions](https://root.cern.ch/building-root).
+To build ROOT follow these [instuctions](https://root.cern.ch/building-root). ROOT 6 is the currently supported (and recommended) version. ROOT 5 might work.
 
 But if you are logging into NuDot (MIT), Wu (Columbia), or at Fermilab, ROOT is already available. Do not install you own copy. Ask some one how to set it up.
 
