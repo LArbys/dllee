@@ -4,6 +4,9 @@
 export OPENCV_LIBDIR=/usr/local/lib
 export OPENCV_INCDIR=/usr/local/include
 
+# uncomment this if you want to include headers using #include "larcv/PackageName/Header.h"
+#export LARCV_PREFIX_INCDIR=1
+
 suffix=so
 if [[ `uname` == 'Darwin' ]]; then
     suffix=dylib
