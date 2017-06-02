@@ -1,15 +1,20 @@
 [submodule "larlite"]
 	path = larlite
 	url = https://github.com/LArLight/larlite
+	branch = trunk
 [submodule "Geo2D"]
 	path = Geo2D
 	url = https://github.com/LArbys/Geo2D
+	branch = develop
 [submodule "LArCV"]
 	path = LArCV
 	url = https://github.com/LArbys/LArCV
+	branch = develop
 [submodule "LArOpenCV"]
 	path = LArOpenCV
 	url = https://github.com/NevisUB/LArOpenCV
+	branch = fmwk_update
 [submodule "larlitecv"]
 	path = larlitecv
 	url = https://github.com/LArbys/larlitecv
+	branch = tmw_muon_tagger

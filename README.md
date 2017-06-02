@@ -4,7 +4,7 @@ Unified Repository To Build DL LEE code in one shot
 
 This repository contains git submodules to the various frameworks and modules the DL LEE analysis uses.
 
-Warning: I don't know what happens when one works on submodule code. Will things get royally f-ed up?
+Warning: if you built the code using this repo and want to work on one of the submodules, remember to check if you are on a DETACHED HEAD state before making modifications: `git branch` to check. However, the `.gitmodules` file in the repo tries to not make this an issue.
 
 # Dependencies
 
@@ -32,7 +32,7 @@ But if you are logging into NuDot (MIT), Wu (Columbia), or at Fermilab, ROOT is 
 
 ## OpenCV
 
-We officially support OpenCV 3.0.
+We officially support OpenCV 3.0. (But OpenCV 3.2 used by some and available on home brew seems to work OK.)
 
 Again, if logging into one of the machines listed above, OpenCV should already be available.
 
@@ -41,6 +41,26 @@ If installing on your laptop here are some quick instructions for a few OS we've
 ### Ubuntu 16.10
 
 These [instructions](http://docs.opencv.org/3.0-beta/doc/tutorials/introduction/linux_install/linux_install.html) mostly work.  For those with an NVIDIA GPU and Ubuntu 16.10, there are conflicts with gcc 5 and CUDA 8's nvcc.  Follow the instructions normally. When you get to the build stage, you might get an error about GCC versions.  Go into CMakeCache.txt and change the gcc compiler version that supports nvcc.  Rerun cmake. Then the build should work.
+
+# Checking out the code
+
+First clone the repository as one would go
+
+    git clone https://github.com/LArbys/dllee_unified
+
+You'll get a folder with what look like folders. But there are submodule links, which point to a specific commit in the various repositories that make up the DL LEE code. To "activate" them, type the following
+
+    git submodule init
+    git submodule update
+
+# Updating the code
+
+This unified repository is expected to update often. To get to the latest, go the folder where this README is located and type
+
+    git pull
+    git submodule update
+
+The second step is needed for all the submodules to go to their latest state as well.
 
 # Building the code
 
@@ -78,6 +98,20 @@ You should see
     Linking library...
     
     DONE
+
+# Checking in changes
+
+If you develop using this repository, remember, the other packages like larlite, LArCV, etc. are submodules.  This can cause an issue if for some reason, the submodules when updated get put into a DETACHED HEAD. This means they are not tracking some past series of commits. The consequence is that if you go into those folders, change things, and commit it, those changes could get lost when you try to update your branch or change to another.
+
+So when developing a submodule it might be a good idea to check if the submodule is on the right branch. Below is the list of branches used by the unified repo. (Note this is subject to change as the software develops. If you notice this is wrong, email taritree about it.)
+
+* larlite: trunk
+* Geo2D: develop
+* LArOpenCV: fmwk_update
+* LArCV: develop
+* larlitecv: tmw_muon_tagger
+
+Note, the repo. has a `.gitmodule` file to solve this, but the maintainer might have messed this up.
 
 # Resetup the environment
 
