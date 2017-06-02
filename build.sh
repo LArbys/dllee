@@ -46,3 +46,4 @@ cp $LARLITECV_BASEDIR/app/TaggerCROI/bin/run_tagger $LARLITECV_BASEDIR/bin/
 chmod u+x $LARLITECV_BASEDIR/bin/run_tagger
 
 echo "DONE"
+return 0
