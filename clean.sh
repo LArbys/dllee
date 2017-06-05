@@ -36,5 +36,6 @@ make clean
 cd $LARLITECV_BASEDIR
 make clean
 
+cd ../
 
 echo "DONE"
