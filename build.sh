@@ -38,12 +38,4 @@ make -j4 || return 1
 
 cd $homedir
 
-echo "BUILD TAGGER"
-make clean --directory=$LARLITECV_BASEDIR/app/TaggerCROI/bin
-make --directory=$LARLITECV_BASEDIR/app/TaggerCROI/bin
-
-echo "INSTALL TAGGER"
-cp $LARLITECV_BASEDIR/app/TaggerCROI/bin/run_tagger $LARLITECV_BASEDIR/bin/
-chmod u+x $LARLITECV_BASEDIR/bin/run_tagger
-
 echo "DONE"
