@@ -21,6 +21,9 @@ make -j4 || return 1
 cd $LARLITE_BASEDIR/UserDev/SelectionTool/OpT0Finder
 make -j4 || return 1
 
+cd $LARLITE_BASEDIR/UserDev/RecoTool/ClusterRecoUtil
+make -j4 || return 1
+
 cd $GEO2D_BASEDIR
 make -j4 || return 1
 
