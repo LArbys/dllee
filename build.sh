@@ -21,6 +21,11 @@ make -j4 || return 1
 cd $LARLITE_BASEDIR/UserDev/SelectionTool/OpT0Finder
 make -j4 || return 1
 
+cd $LARLITE_BASEDIR/UserDev/SelectionTool/LEEPreCuts
+git submodule init
+git submodule update
+make -j4 || return 1
+
 cd $LARLITE_BASEDIR/UserDev/RecoTool/ClusterRecoUtil
 make -j4 || return 1
 
@@ -34,6 +39,9 @@ cd $LARCV_BASEDIR
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR
+make -j4 || return 1
+
+cd $LARLITECV_BASEDIR/app/DLPMTPreCutsApp/
 make -j4 || return 1
 
 cd $homedir
