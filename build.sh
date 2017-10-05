@@ -13,6 +13,7 @@ echo "LAROPENCV: ${LAROPENCV_BASEDIR}"
 echo "LARLITECV: ${LARLITECV_BASEDIR}"
 
 cd $LARLITE_BASEDIR
+git checkout trunk
 make -j4 || return 1
 
 cd $LARLITE_BASEDIR/UserDev/BasicTool
@@ -30,15 +31,19 @@ cd $LARLITE_BASEDIR/UserDev/RecoTool/ClusterRecoUtil
 make -j4 || return 1
 
 cd $GEO2D_BASEDIR
+git checkout develop
 make -j4 || return 1
 
 cd $LAROPENCV_BASEDIR
+git checkout fmwk_update
 make -j4 || return 1
 
 cd $LARCV_BASEDIR
+git checkout develop
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR
+git checkout tmw_tracker_charge_checks
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR/app/DLPMTPreCutsApp/
