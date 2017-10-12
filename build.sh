@@ -13,7 +13,7 @@ echo "LAROPENCV: ${LAROPENCV_BASEDIR}"
 echo "LARLITECV: ${LARLITECV_BASEDIR}"
 
 cd $LARLITE_BASEDIR
-git checkout trunk
+git checkout tmw_cosmicdisc_flash
 make -j4 || return 1
 
 cd $LARLITE_BASEDIR/UserDev/BasicTool
@@ -43,7 +43,7 @@ git checkout develop
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR
-git checkout tmw_tracker_charge_checks
+git checkout tmw_muon_tagger
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR/app/DLPMTPreCutsApp/
