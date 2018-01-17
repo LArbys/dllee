@@ -13,7 +13,7 @@ echo "LAROPENCV: ${LAROPENCV_BASEDIR}"
 echo "LARLITECV: ${LARLITECV_BASEDIR}"
 
 cd $LARLITE_BASEDIR
-git checkout tmw_cosmicdisc_flash
+#git checkout tmw_cosmicdisc_flash
 make -j4 || return 1
 
 cd $LARLITE_BASEDIR/UserDev/BasicTool
@@ -30,20 +30,23 @@ make -j4 || return 1
 cd $LARLITE_BASEDIR/UserDev/RecoTool/ClusterRecoUtil
 make -j4 || return 1
 
+cd $LARLITE_BASEDIR/UserDev/RecoTool
+make -j4 || return 1
+
 cd $GEO2D_BASEDIR
-git checkout develop
+#git checkout develop
 make -j4 || return 1
 
 cd $LAROPENCV_BASEDIR
-git checkout fmwk_update
+#git checkout fmwk_update
 make -j4 || return 1
 
 cd $LARCV_BASEDIR
-git checkout develop
+#git checkout develop
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR
-git checkout tmw_muon_tagger
+#git checkout tmw_muon_tagger
 make -j4 || return 1
 
 cd $LARLITECV_BASEDIR/app/DLPMTPreCutsApp/
