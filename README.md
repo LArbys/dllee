@@ -10,6 +10,8 @@ Warning: if you built the code using this repo and want to work on one of the su
 
 * ROOT (6 Highly recommended. 5 might work, but not really supported)
 * OpenCV
+* Bash
+* CMake
 
 ## Pre-reqs
 
