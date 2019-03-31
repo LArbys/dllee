@@ -25,6 +25,7 @@ Warning: if you built the code using this repo and want to work on one of the su
 * One first needs to install X code on OS X
 * Our group is mostly familiar with home brew to serve as the OS X package manager
 * Use brew to install pre-reqs for ROOT and OpenCV 3 itself. Make sure to specify `brew install opencv3` and not just `opencv` which installs OpenCV 2. 
+* If you're using OS X El Capitan or later, make sure you disable SIP (System Integrity Protection). 
 
 ## ROOT
 
