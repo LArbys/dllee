@@ -38,6 +38,13 @@ cd $LAROPENCV_BASEDIR
 #git checkout fmwk_update
 make -j4 || return 1
 
+cd $CILANTRO_BASEDIR
+mkdir build
+cd build
+cmake ..
+cmake --build .
+cd ../..
+
 cd $LARCV_BASEDIR
 #git checkout develop
 make -j4 || return 1

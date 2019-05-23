@@ -46,6 +46,12 @@ Common:
     envSet(LAROPENCV_BASEDIR,${UPS_PROD_DIR}/LArOpenCV)
     envSet(LAROPENCV_IMAGECLUSTERDIR,${UPS_PROD_DIR}/LArOpenCV/ImageCluster)
 
+    # CILANTRO
+    envSet(CILANTRO_BASEDIR,${UPS_PROD_DIR}/cilantro)
+    envSet(CILANTRO_BINDIR,${UPS_PROD_DIR}/cilantro/bin)
+    envSet(CILANTRO_INCDIR,${UPS_PROD_DIR}/cilantro/include)
+    envSet(CILANTRO_LIBDIR,${UPS_PROD_DIR}/cilantro/build)  
+
     # LArCV
     envSet(LARCV_BASEDIR,${UPS_PROD_DIR}/LArCV)
     envSet(LARCV_APPDIR,${UPS_PROD_DIR}/LArCV/app)

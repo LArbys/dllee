@@ -5,7 +5,7 @@ if [ -z ${DLLEE_UNIFIED_BASEDIR+x} ]; then
 fi
 
 # setup environment variables
-source $DLLEE_UNIFIED_BASEDIR/setup.sh
+#source $DLLEE_UNIFIED_BASEDIR/setup.sh
 
 # setup larlite
 source $DLLEE_UNIFIED_BASEDIR/larlite/config/setup.sh
