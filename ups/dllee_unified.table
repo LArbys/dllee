@@ -9,7 +9,7 @@ Qualifiers = "e17:prof"
 
   Action = GetProducts
     setupRequired( root     v6_12_06a -q e17:prof )
-    setupRequired( opencv   v3_4_2    -q e17 )
+    setupRequired( opencv   v3_4_6    -q e17 )
     setupRequired( python   v2_7_14b )
     setupRequired( numpy    v1_14_3   -q e17:p2714b:prof )
 
@@ -45,6 +45,12 @@ Common:
     # LArOpenCV
     envSet(LAROPENCV_BASEDIR,${UPS_PROD_DIR}/LArOpenCV)
     envSet(LAROPENCV_IMAGECLUSTERDIR,${UPS_PROD_DIR}/LArOpenCV/ImageCluster)
+
+    # CILANTRO
+    envSet(CILANTRO_BASEDIR,${UPS_PROD_DIR}/cilantro)
+    envSet(CILANTRO_BINDIR,${UPS_PROD_DIR}/cilantro/bin)
+    envSet(CILANTRO_INCDIR,${UPS_PROD_DIR}/cilantro/include)
+    envSet(CILANTRO_LIBDIR,${UPS_PROD_DIR}/cilantro/build)  
 
     # LArCV
     envSet(LARCV_BASEDIR,${UPS_PROD_DIR}/LArCV)
