@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# SETUP dependencies through UPS
+source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone.sh
+setup root v6_12_06a -q e17:prof
+setup python v2_7_14b
+setup numpy v1_14_3 -q e17:p2714b:prof
+setup opencv v3_4_2 -q e17
+
 # SPECIFY WHERE OPENCV IS
 export OPENCV_LIBDIR=${OPENCV_LIB}
 export OPENCV_INCDIR=${OPENCV_INC}
