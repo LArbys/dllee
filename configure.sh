@@ -5,7 +5,7 @@ if [ -z ${DLLEE_UNIFIED_BASEDIR+x} ]; then
 fi
 
 # setup environment variables
-source $DLLEE_UNIFIED_BASEDIR/setup.sh
+#source $DLLEE_UNIFIED_BASEDIR/setup.sh
 
 # setup larlite
 source $DLLEE_UNIFIED_BASEDIR/larlite/config/setup.sh
@@ -15,6 +15,9 @@ source $DLLEE_UNIFIED_BASEDIR/LArOpenCV/setup_laropencv.sh
 
 # setup Geo2D
 source $DLLEE_UNIFIED_BASEDIR/Geo2D/config/setup.sh
+
+# setup Cilantro
+source $DLLEE_UNIFIED_BASEDIR/cilantro/dllee_setup.sh
 
 # setup LArCV
 source $DLLEE_UNIFIED_BASEDIR/LArCV/configure.sh
