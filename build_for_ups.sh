@@ -3,9 +3,6 @@
 homedir=$PWD
 echo "Starting from $homedir"
 
-source setup.sh
-source configure.sh
-
 echo "LARLITE: ${LARLITE_BASEDIR}"
 echo "LARLITE: ${GEO2D_BASEDIR}"
 echo "LARCV: ${LARCV_BASEDIR}"
@@ -16,8 +13,13 @@ cd $LARLITE_BASEDIR
 #git checkout tmw_cosmicdisc_flash
 make -j4 || return 1
 
-#cd $LARLITE_BASEDIR/UserDev/BasicTool/FhiclLite
-cd $LARLITE_BASEDIR/UserDev/BasicTool/
+cd $LARLITE_BASEDIR/UserDev/BasicTool/FhiclLite
+make -j4 || return 1
+
+cd $LARLITE_BASEDIR/UserDev/BasicTool/GeoAlgo
+make -j4 || return 1
+
+cd $LARLITE_BASEDIR/UserDev/BasicTool/LArPyBackend
 make -j4 || return 1
 
 cd $LARLITE_BASEDIR/UserDev/SelectionTool/OpT0Finder
@@ -41,6 +43,13 @@ make -j4 || return 1
 cd $LAROPENCV_BASEDIR
 #git checkout fmwk_update
 make -j4 || return 1
+
+cd $CILANTRO_BASEDIR
+mkdir build
+cd build
+cmake ..
+cmake --build .
+cd ../..
 
 cd $LARCV_BASEDIR
 #git checkout develop
