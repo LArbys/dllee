@@ -25,3 +25,12 @@ source $DLLEE_UNIFIED_BASEDIR/LArCV/configure.sh
 # setup larlitecv
 source $DLLEE_UNIFIED_BASEDIR/larlitecv/configure.sh
 
+# ENV VARIABLES TO SETUP BINARIES/RECO SCRIPTS
+
+# Tagger
+export TAGGER_BIN_DIR=$DLLEE_UNIFIED_BASEDIR/larlitecv/app/TaggerCROI/bin
+[[ ":${PATH}:" != *":${TAGGER_BIN_DIR}:"* ]] && export PATH="${TAGGER_BIN_DIR}:${PATH}"
+
+# Vertexer
+export VERTEXER_SCRIPT_DIR=${LARCV_BASEDIR}/app/LArOpenCVHandle/cfg/mac/
+[[ ":${PATH}:" != *":${VERTEXER_SCRIPT_DIR}:"* ]] && export PATH="${VERTEXER_SCRIPT_DIR}:${PATH}"
