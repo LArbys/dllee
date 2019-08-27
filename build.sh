@@ -3,7 +3,7 @@
 homedir=$PWD
 echo "Starting from $homedir"
 
-source setup.sh
+#source setup.sh
 source configure.sh
 
 echo "LARLITE: ${LARLITE_BASEDIR}"
