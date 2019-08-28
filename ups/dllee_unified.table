@@ -9,7 +9,7 @@ Qualifiers = "e17:prof"
 
   Action = GetProducts
     setupRequired( root     v6_12_06a -q e17:prof )
-    setupRequired( opencv   v3_4_6    -q e17 )
+    setupRequired( opencv   v3_1_0_nogui    -q e17 )
     setupRequired( python   v2_7_14b )
     setupRequired( numpy    v1_14_3   -q e17:p2714b:prof )
 
