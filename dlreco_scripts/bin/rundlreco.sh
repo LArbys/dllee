@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # OUTPUT FILES FROM PREVIOUS STAGE
-#source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone.sh
+source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone.sh
 
 echo "FILES available"
 ls -lh
@@ -67,7 +67,10 @@ mv -f tracker_reco_0.root    $TRKONLY_TRACKEROUT
 mv -f tracker_anaout_0.root  $TRKONLY_TRACKERANA
 
 echo "<< combine larlite files >>"
-python $DLLEE_UNIFIED_DIR/dlreco_scripts/bin/combine_larlite.py -o larlite_dlmerged.root larlite_opreco.root larlite_reco2d.root tracker_reco.root tracker_reco_trackonly.root 
+python $DLLEE_UNIFIED_DIR/dlreco_scripts/bin/combine_larlite.py -o larlite_dlmerged.root larlite_opreco.root larlite_reco2d.root tagger_anaout_larlite.root tracker_reco.root tracker_reco_trackonly.root 
 echo "<<< HADD ROOT FILES >>>"
 hadd -f merged_dlreco.root $VERTEXOUT $TRKONLY_VERTEXOUT $VERTEXANA $TRKONLY_VERTEXANA $TRACKERANA $TRKONLY_TRACKERANA larlite_dlmerged.root
+echo "<<< Append UBDL Products >>>"
+python $DLLEE_UNIFIED_DIR/dlreco_scripts/bin/append_ubdlproducts.py merged_dlreco.root out_larcv_test.root
+
 

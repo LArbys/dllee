@@ -18,7 +18,8 @@ io.set_out_filename( args.output )
 io.open()
 
 nentries = io.get_entries()
+io.next_event()
 for ientry in xrange(nentries):
-    io.go_to(ientry)
+    io.next_event()
 
 io.close()

@@ -22,8 +22,6 @@ for vt in vertexana_trees:
     chains[vt] = fin.Get(vt)
 
 for vt in vertexana_trees:
-    t = rt.TTree("%s_VtxTrk"%(vt),"%s but using all-track-only labels"%(vt))
-    t.AddFriend( chains[vt] )
-    t.Write()
+    chains[vt].CloneTree().Write("%s_VtxTrk"%(vt))
 
 fout.Close()
