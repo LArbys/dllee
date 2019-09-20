@@ -45,11 +45,11 @@ Scripts can be found in `tagger_scripts` in this folder.
 
 | File type    | configuration script |
 | ------------ | -------------------- |
-| BNB          | tagger_data_v2_splity.cfg |
-| MC Overlay   | tagger_overlay_v2_splity.cfg |
+| BNB          | tagger_bnbdata_v2_splity_mcc9.cfg |
+| MC Overlay   | tagger_overlay_v2_splity_mcc9.cfg |
 | MC corsika   | tagger_mcv2_splity.cfg |
-| EXT-BNB      | tagger_extbnb_v2_splity.cfg   (missing) |
-| EXT-unbiased | tagger_unbiased_v2_splity.cfg (missing) |
+| EXT-BNB      | tagger_extbnb_v2_splity_mcc9.cfg |
+| EXT-unbiased | tagger_extbnb_v2_splity_mcc9.cfg |
 
 ### Notes
 
@@ -66,3 +66,23 @@ TBD
 
 ## Vertexer
 
+There is a python helper script and vertxer configuration files in the `dlreco_scripts` folder of the `dllee_unified` repository.
+
+```
+python $DLLEE_UNIFIED_BASEDIR/dlreco_scripts/bin/run_vertexer.py -c $VERTEX_CONFIG -a vertexana.root -o vertexout.root -d ./ $SUPERA $TAGGER
+```
+
+where `$DLLEE_UNIFIED_BASEDIR` is the location of your dllee_unified repository. 
+This environment variable is setup for you when you run the `configure.sh` script found in the top-level folder of the repo.
+`$VERTEX_CONFIG` is the vertex configuration file (see the table in the next section for which to run).  
+`$SUPERA` is the `larcv` file with the ADC image (usually the `wire` tree).
+`$TAGGER` is the output of the tagger file (DL or Baseline versions).
+
+### Config files to use
+
+The configuration one uses for the vertexer depends on the input 
+
+| Config description            | Input supera  | Input tagger | other |  config file   |
+| ----------------------------- | ------------- | ------------ | ----- | -----------    |
+| Baseline/MCC8 developed tools | dllee_unified | old tagger   |  N/A  | prod_fullchain_ssnet_combined_newtag_extbnb_c10_union_server.cfg |
+| Run on FNAL                   | ubdl          | old tagger   |  N/A  | prod_fullchain_mcc9ssnet_combined_newtag_extbnb_c10_union.cfg |
