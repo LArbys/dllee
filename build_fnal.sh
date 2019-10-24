@@ -34,6 +34,9 @@ make -j4 || return 1
 cd $LARLITE_BASEDIR/UserDev/RecoTool
 make -j4 || return 1
 
+cd $LARLITE_BASEDIR/UserDev/InterUtils
+make -j4 || return 1
+
 cd $GEO2D_BASEDIR
 #git checkout develop
 make -j4 || return 1
