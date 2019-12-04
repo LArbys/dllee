@@ -13,7 +13,7 @@ cd $LARLITE_BASEDIR
 #git checkout tmw_cosmicdisc_flash
 make -j4 || return 1
 
-cd $LARLITE_BASEDIR/UserDev/BasicTool/FhiclLite
+cd $LARLITE_BASEDIR/UserDev/BasicTool
 make -j4 || return 1
 
 cd $LARLITE_BASEDIR/UserDev/BasicTool/GeoAlgo
