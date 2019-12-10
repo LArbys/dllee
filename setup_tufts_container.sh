@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # SETUP ROOT
-source /usr/local/root/build/bin/thisroot.sh
+source /usr/local/root/root-6.16.00/bin/thisroot.sh
 
 export OPENCV_LIBDIR=/usr/local/lib
 export OPENCV_INCDIR=/usr/local/include
