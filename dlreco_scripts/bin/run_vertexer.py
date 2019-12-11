@@ -22,6 +22,7 @@ from ROOT import std
 proc = larcv.ProcessDriver('ProcessDriver')
 
 # configuration
+print "configure: ",args.config
 proc.configure(args.config)
 
 # input larcv files
