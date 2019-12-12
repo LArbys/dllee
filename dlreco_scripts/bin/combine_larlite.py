@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os,sys
 import argparse
 
@@ -11,9 +12,11 @@ import ROOT
 from larlite import larlite
 
 io = larlite.storage_manager(larlite.storage_manager.kBOTH)
+io.set_verbosity(0)
 for f in args.filelist:
+    print("merging file: ",f)
     io.add_in_filename( f )
-print "output file: ",args.output
+print("merged larlite output file: ",args.output)
 io.set_out_filename( args.output )
 io.open()
 
