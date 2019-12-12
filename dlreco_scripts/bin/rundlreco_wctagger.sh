@@ -49,7 +49,7 @@ $LARCV_BASEDIR/app/WC_Tagger/./thrumu_maker input_larcv.txt
 TAGGER_LARCV=thrumu_outfile.root
 
 echo "<<< RUN VERTEXER >>>"
-#python $DLLEE_UNIFIED_BASEDIR/dlreco_scripts/bin/run_vertexer.py -c $VERTEX_CONFIG -a vertexana.root -o vertexout.root -d ./ $INPUT_DLMERGED $TAGGER_LARCV
+python $DLLEE_UNIFIED_BASEDIR/dlreco_scripts/bin/run_vertexer.py -c $VERTEX_CONFIG -a vertexana.root -o vertexout.root -d ./ $INPUT_DLMERGED $TAGGER_LARCV
 VERTEXOUT=vertexout.root
 VERTEXANA=vertexana.root
 
@@ -62,11 +62,11 @@ mv -f tracker_anaout_0.root  $TRACKERANA
 
 echo "<<< EXTRACT RECO2D >>>"
 RECO2D=extracted_larlite_reco2d.root
-python extract_reco2d.py $INPUT_DLMERGED $RECO2D
+python $DLLEE_UNIFIED_BASEDIR/dlreco_scripts/bin/extract_reco2d.py $INPUT_DLMERGED $RECO2D
 
 echo "<<< RUN SHOWER RECO >>>"
 echo "  < make inter file > "
-echo "python ${NUEID_INTER_DIR}/inter_ana_nue_server.py -c ${NUEID_INTER_CONFIG} -mc -d -id 0 -od ./ -re larlite_reco2d.root vertexout.root"
+echo "python ${NUEID_INTER_DIR}/inter_ana_nue_server.py -c ${NUEID_INTER_CONFIG} -mc -d -id 0 -od ./ -re $RECO2D vertexout.root"
 python ${NUEID_INTER_DIR}/inter_ana_nue_server.py -c ${NUEID_INTER_CONFIG} -mc -d -id 0 -od ./ -re $RECO2D vertexout.root
 
 echo "  < shower file >"
