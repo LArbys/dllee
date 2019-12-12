@@ -40,7 +40,7 @@ proc = larcv.ProcessDriver('ProcessDriver')
 
 proc.configure(CONFIG_FILE)
 flist=ROOT.std.vector('std::string')()
-flist.push_back(ROOT.std.string(IMG_FILE))
+#flist.push_back(ROOT.std.string(IMG_FILE))
 flist.push_back(ROOT.std.string(TAGGER_FILE))
 flist.push_back(ROOT.std.string(PGRAPH_FILE))
 proc.override_input_file(flist)
