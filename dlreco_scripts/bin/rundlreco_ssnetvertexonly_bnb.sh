@@ -16,9 +16,14 @@ cat larStage1.out
 echo "<<larstage1.err>>"
 cat larStage1.err
 
-
 # OUTPUT FILES FROM PREVIOUS STAGE
 source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone.sh
+
+# HERE's OUR HACK: bring down ubdl, bring up dllee_unified
+unsetup ubdl
+
+echo "<<< SETUP DLLEE_UNIFIED >>>"
+setup dllee_unified v1_0_2 -q e17:prof
 
 SUPERA=out_larcv_test.root  # has adc image, chstatus, ssnet output, mrcnn
 OPRECO=larlite_opreco.root
@@ -53,12 +58,6 @@ else
     exit 0
 fi
 echo "<<<< END OF EMPTY FILE CHECK>>>>"
-
-# HERE's OUR HACK: bring down ubdl, bring up dllee_unified
-unsetup ubdl
-
-echo "<<< SETUP DLLEE_UNIFIED >>>"
-setup dllee_unified v1_0_2 -q e17:prof
 
 # SETUP ENV FOR TAGGER BIN
 export PATH=$LARLITECV_BASEDIR/app/TaggerCROI/bin:$PATH
