@@ -4,9 +4,9 @@ import os,sys
 import argparse
 parser = argparse.ArgumentParser(description="Run DL LEE Vertexer")
 parser.add_argument('-c','--config',required=True,type=str,help="configuration file")
-parser.add_argument('-i','--supera',required=True,type=str,help="Input supera file: has ADC image")
-parser.add_argument('-t','--tagger',required=True,type=str,help="Input tagger file: has tagger info")
-parser.add_argument('-p','--pgraph',required=True,type=str,help="Input vertexer file: has particle graph and vertex info")
+parser.add_argument('-i','--supera',required=False,type=str,default=None,help="Input supera file  (LARCV): has ADC image")
+parser.add_argument('-t','--tagger',required=False,type=str,default=None,help="Input tagger file  (LARCV): has tagger info")
+parser.add_argument('-p','--pgraph',required=True,type=str,default=None,help="Input vertexer file (LARCV): has particle graph and vertex info")
 parser.add_argument('-sp','--spline-path',default=None,type=str,help="Path to dE/dx spline file.")
 parser.add_argument('-d','--outdir',default="./",type=str,help="Output directory")
 
@@ -40,9 +40,11 @@ proc = larcv.ProcessDriver('ProcessDriver')
 
 proc.configure(CONFIG_FILE)
 flist=ROOT.std.vector('std::string')()
-#flist.push_back(ROOT.std.string(IMG_FILE))
-flist.push_back(ROOT.std.string(TAGGER_FILE))
 flist.push_back(ROOT.std.string(PGRAPH_FILE))
+if args.supera is not None:
+    flist.push_back(ROOT.std.string(IMG_FILE))
+if args.tagger is not None:
+    flist.push_back(ROOT.std.string(TAGGER_FILE))
 proc.override_input_file(flist)
 
 proc.override_ana_file(ROOT.std.string(os.path.join(OUTPUT_DIR,"tracker_anaout_%d.root" % num)))
