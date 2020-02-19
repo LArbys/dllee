@@ -13,5 +13,7 @@ UNIFIED_DIR=/cluster/tufts/wongjiradlab/twongj01/production/dllee_unified_opencv
 ROOT_DIR=/usr/local/root/root-6.16.00/
 CONTAINER=/cluster/tufts/wongjiradlab/larbys/larbys-containers/singularity_ubdl_deps_py2_10022019.simg
 
-singularity exec $CONTAINER bash -c "source $ROOT_DIR/bin/thisroot.sh && cd $UNIFIED_DIR && source setup.sh && source configure.sh && source clean.sh && source build.sh"
-#singularity exec $CONTAINER bash -c "source $ROOT_DIR/bin/thisroot.sh && cd $UNIFIED_DIR && source setup.sh && source configure.sh && source build.sh"
+# with clean first
+#singularity exec $CONTAINER bash -c "source $ROOT_DIR/bin/thisroot.sh && cd $UNIFIED_DIR && source setup.sh && source configure.sh && source clean.sh && source build.sh"
+# without cleaning first
+singularity exec $CONTAINER bash -c "source $ROOT_DIR/bin/thisroot.sh && cd $UNIFIED_DIR && source setup.sh && source configure.sh && source build.sh"

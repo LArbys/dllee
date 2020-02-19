@@ -53,6 +53,8 @@ cd $LARLITECV_BASEDIR
 #git checkout tmw_muon_tagger
 make -j4 || return 1
 make bin -j4 || return 1
+cd $LARLITECV_BASEDIR/app/dllee/bin
+make
 
 cd $homedir
 
