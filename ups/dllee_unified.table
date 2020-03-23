@@ -100,6 +100,7 @@ Common:
     pathPrepend(LD_LIBRARY_PATH, ${UPS_PROD_DIR}/LArCV/build/lib )
     pathPrepend(LD_LIBRARY_PATH, ${UPS_PROD_DIR}/larlitecv/build/lib )
     pathPrepend(PATH, ${UPS_PROD_DIR}/larlitecv/bin )
+    pathPrepend(PATH, ${UPS_PROD_DIR}/larlitecv/app/SSNetShowerReco/bin )
 
 
 End:
