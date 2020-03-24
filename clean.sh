@@ -27,6 +27,9 @@ make clean
 cd $LARLITE_BASEDIR/UserDev/SelectionTool/LEEPreCuts
 make clean
 
+cd $LARLITE_BASEDIR/UserDev/SelectionTool/InterUtils
+make clean
+
 cd $GEO2D_BASEDIR
 make clean
 
