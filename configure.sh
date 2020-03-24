@@ -1,7 +1,8 @@
 #!/bin/bash
 
 if [ -z ${DLLEE_UNIFIED_BASEDIR+x} ]; then
-    export DLLEE_UNIFIED_BASEDIR=$PWD
+    where="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+    export DLLEE_UNIFIED_BASEDIR=$where
 fi
 
 # setup environment variables

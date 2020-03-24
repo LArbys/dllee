@@ -22,6 +22,8 @@ Common:
     # Set up required products, which is root
     exeActionRequired(GetProducts)
 
+    envSet(DLLEE_UNIFIED_BASEDIR,${UPS_PROD_DIR})
+
     # set key environment variables for sub-packages
     envSet(OPENCV_LIBDIR,${OPENCV_LIB})
     envSet(OPENCV_INCDIR,${OPENCV_INC})
