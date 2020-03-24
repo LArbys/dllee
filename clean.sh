@@ -41,6 +41,7 @@ make clean
 
 cd $LARLITECV_BASEDIR
 make clean
+rm -r $LARLITECV_BASEDIR/build/*
 
 cd ../
 
