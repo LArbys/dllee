@@ -1,6 +1,6 @@
 File=Table 
-Product=ubdl
-Version=v1_0_4
+Product=dllee_unified
+Version=develop
  
 Group:
 
@@ -110,6 +110,6 @@ End:
 #*************************************************
 #
 # ups declare command that works on gpvm:
-# ups declare dllee_unified v1_0_2 -r ubdl/v06_36_00 -f Linux64bit+2.6-2.12 -m dllee_unified.table -q e17:prof -U ups/
+# ups declare dllee_unified develop -r dllee_unified/develop -f Linux64bit+2.6-2.12 -m dllee_unified.table -q e17:prof -U ups/
 #
 #
