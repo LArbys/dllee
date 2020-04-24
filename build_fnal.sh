@@ -48,6 +48,8 @@ make -j4 || return 1
 cd $LARCV_BASEDIR
 #git checkout develop
 make -j4 || return 1
+cd $LARCV_BASEDIR/app/WC_Tagger
+make
 
 cd $LARLITECV_BASEDIR
 #git checkout tmw_muon_tagger
